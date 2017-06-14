@@ -15,6 +15,20 @@ $(document).ready(function() {
         }
     }
 
+    $("#term").autocomplete({
+         source: function (request, response) {
+             $.ajax({
+                 url: "https://wger.de/api/v2/exercise/",
+                 data: { name: request.term },
+                 dataType: "json",
+                 success: response,
+                 error: function () {
+                     response([]);
+                 }
+             });
+         };
+    });
+
     $("#search").click(getExercise);
 
     $("#term").keyup(function(event) {
