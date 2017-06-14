@@ -18,7 +18,7 @@ $(document).ready(function() {
     $("#term").autocomplete({
          source: function (request, response) {
              $.ajax({
-                 url: "https://wger.de/api/v2/exercise/",
+                 url: "https://wger.de/api/v2/exercise/?format=json",
                  data: { name: request.term },
                  dataType: "json",
                  success: response,
@@ -26,7 +26,7 @@ $(document).ready(function() {
                      response([]);
                  }
              });
-         };
+         }
     });
 
     $("#search").click(getExercise);
