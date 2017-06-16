@@ -16,17 +16,23 @@ $(document).ready(function() {
     }
 
     $("#term").autocomplete({
-         source: function (request, response) {
-             $.ajax({
-                 url: "https://wger.de/api/v2/exercise/?format=json",
-                 data: { name: request.term },
-                 dataType: "json",
-                 success: response,
-                 error: function () {
-                     response([]);
-                 }
-             });
-         }
+        source: function (request, response) {
+            $.ajax({
+                url: "https://wger.de/api/v2/exercise/?format=json",
+                type: "GET",
+                data: { name: request.term },
+                dataType: "json",
+                minLength: 2,
+                success: function(data) {
+                    response($.map(data.results, function(item) {
+                        return {
+                            label: item.name,
+                            value: item.name
+                        }
+                    }));
+                }
+            });
+        }
     });
 
     $("#search").click(getExercise);
