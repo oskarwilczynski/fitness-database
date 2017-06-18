@@ -15,6 +15,15 @@ $(document).ready(function() {
         }
     }
 
+    let bbb = $.getJSON( "https://wger.de/api/v2/exercise/?format=json", function( data ) {
+        console.log('loaded');
+        var names = []; // create array here
+        $.each(data.results, function (index, item) {
+            names.push(item.name); //push values here
+        });
+        console.log(names); // see the output here
+    });
+
     $("#term").autocomplete({
         source: function (request, response) {
             $.ajax({
@@ -24,12 +33,12 @@ $(document).ready(function() {
                 dataType: "json",
                 minLength: 2,
                 success: function(data) {
-                    response($.map(data.results, function(item) {
-                        return {
-                            label: item.name,
-                            value: item.name
-                        }
-                    }));
+                    var names = [];
+                    $.each(data.results, function (index, item) {
+                        names.push(item.name);
+                    })
+                    console.log(names);
+                    response(names);
                 }
             });
         }
