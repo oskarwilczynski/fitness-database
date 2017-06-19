@@ -15,34 +15,17 @@ $(document).ready(function() {
         }
     }
 
-    let bbb = $.getJSON( "https://wger.de/api/v2/exercise/?format=json", function( data ) {
-        console.log('loaded');
-        var names = []; // create array here
+    {
+    let names = [];
+    $.getJSON( "https://wger.de/api/v2/exercise/?format=json&language=2", function(data) {
         $.each(data.results, function (index, item) {
-            names.push(item.name); //push values here
+            names.push(item.name);
         });
-        console.log(names); // see the output here
+        return names;
     });
 
-    $("#term").autocomplete({
-        source: function (request, response) {
-            $.ajax({
-                url: "https://wger.de/api/v2/exercise/?format=json",
-                type: "GET",
-                data: { name: request.term },
-                dataType: "json",
-                minLength: 2,
-                success: function(data) {
-                    var names = [];
-                    $.each(data.results, function (index, item) {
-                        names.push(item.name);
-                    })
-                    console.log(names);
-                    response(names);
-                }
-            });
-        }
-    });
+    $("#term").autocomplete({source: names});
+    }
 
     $("#search").click(getExercise);
 
@@ -50,5 +33,5 @@ $(document).ready(function() {
         if (event.keycode == 13) {
             getExercise();
         }
-    })
-})
+    });
+});
