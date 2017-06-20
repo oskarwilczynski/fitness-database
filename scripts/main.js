@@ -16,15 +16,15 @@ $(document).ready(function() {
     }
 
     {
-    let names = [];
-    $.getJSON( "https://wger.de/api/v2/exercise/?format=json&language=2", function(data) {
-        $.each(data.results, function (index, item) {
-            names.push(item.name);
-        });
-        return names;
-    });
+        let names = [];
 
-    $("#term").autocomplete({source: names});
+        $.getJSON("https://wger.de/api/v2/exercise/?format=json&language=2&limit=999", function(data) {
+            $.each(data.results, function (index, item) {
+                names.push(item.name);
+            });
+        });
+
+        $("#term").autocomplete({source: names});
     }
 
     $("#search").click(getExercise);
