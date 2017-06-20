@@ -13,7 +13,19 @@ $(document).ready(function() {
                 $('#exercise').html('<h2 class="loading">Exercise found!</h2>' + json.results[0].description);
             })
         }
-    }
+    };
+
+    (function autocompletePatch() {
+        $.ui.autocomplete.prototype._renderItem = function(ul, item) {
+            var re = new RegExp("^" + this.term);
+            var t = item.label.replace(re,"<span style='color:Blue;'>" + "$&" + "</span>");
+
+            return $("<li></li>")
+                .data("item.autocomplete", item)
+                .append("<a>" + t + "</a>")
+                .appendTo(ul);
+        };
+    })();
 
     {
         let names = [];
