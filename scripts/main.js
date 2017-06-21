@@ -17,12 +17,14 @@ $(document).ready(function() {
 
     (function autocompletePatch() {
         $.ui.autocomplete.prototype._renderItem = function(ul, item) {
-            var re = new RegExp("^" + this.term);
-            var t = item.label.replace(re,"<span style='color:Blue;'>" + "$&" + "</span>");
+            let cleanTerm = this.term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+            let keywords = $.trim(cleanTerm).replace('  ', ' ').split(' ').join('|');
 
-            return $("<li></li>")
-                .data("item.autocomplete", item)
-                .append("<a>" + t + "</a>")
+            let re = new RegExp("(" + keywords + ")", "gi");
+            let output = item.label.replace(re, "<span style='color: Blue;'>$1</span>");
+
+            return $("<li>")
+                .append($("<a>").html(output))
                 .appendTo(ul);
         };
     })();
