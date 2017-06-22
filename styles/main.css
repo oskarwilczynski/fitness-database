@@ -18,4 +18,15 @@ body {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     overflow: hidden;
+    background-color: #052427;
+    color: #f8f8f8;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #f8f8f8;
+}
+
+a:hover {
+	color: #3591d0;
 }
