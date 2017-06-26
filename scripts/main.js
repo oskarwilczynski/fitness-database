@@ -6,8 +6,6 @@ $(document).ready(function() {
 
         if (exercise == "") {
             $("#exercise").html("<h2 class='loading'>Please enter something.</h2>")
-        } else if (exercise == "undefined") {
-            $("#exercise").html("<h2 class='loading'>Exercise not found.</h2>")
         } else {
             $("#exercise").html("<h2 class='loading'>Exercise is on its way.</h2>")
 
