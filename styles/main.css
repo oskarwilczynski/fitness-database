@@ -104,3 +104,20 @@ h1 {
     width: 55%;
     font-family: 'Arvo', serif;
 }
+
+@media only screen and (max-width: 590px) {
+    #search, #term {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    h1 {
+        font-size: 2.6em;
+    }
+}
