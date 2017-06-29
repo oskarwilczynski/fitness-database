@@ -5,15 +5,16 @@ $(document).ready(function() {
         let exercise = $("#term").val();
 
         if (exercise == "") {
-            $("#exercise").html("<h2 class='loading'>Please enter something.</h2>");
+            $("#exercise_status").html("<h2 class='loading'>Please enter something.</h2>");
         } else {
-            $("#exercise").html("<h2 class='loading'>Loading...</h2>")
+            $("#exercise_status").html("<h2 class='loading'>Loading...</h2>")
 
             $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2", function(json) {
                 if ("undefined" === typeof json.results[0]) {
-                    $('#exercise').html('<h2 class="loading">No exercise found!</h2>');
+                    $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
                 } else {
-                    $('#exercise').html('<h2 class="loading">Exercise found!</h2>' + json.results[0].description);
+                    $('#exercise_status').html('<h2 class="loading">Exercise found!</h2>');
+                    $('#exercise_description').html(json.results[0].description);
                 }
             })
         }

@@ -105,6 +105,23 @@ h1 {
     font-family: 'Arvo', serif;
 }
 
+.loading {
+    font-family: 'Arvo', serif;
+    text-align: center;
+}
+
+#exercise {
+    width: 100%;
+}
+
+#exercise_description {
+    float: right;
+    text-align: center;
+
+}
+
+
+
 @media only screen and (max-width: 590px) {
     #search, #term {
         font-size: 1em;
