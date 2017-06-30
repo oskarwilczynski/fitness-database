@@ -115,12 +115,19 @@ h1 {
 }
 
 #exercise_description {
-    float: right;
     text-align: center;
-
 }
 
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
 
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+}
 
 @media only screen and (max-width: 590px) {
     #search, #term {

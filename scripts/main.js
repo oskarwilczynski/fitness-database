@@ -9,7 +9,7 @@ $(document).ready(function() {
         } else {
             $("#exercise_status").html("<h2 class='loading'>Loading...</h2>")
 
-            $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2", function(json) {
+            $.when($.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2&status=2"), $.getJSON("https://wger.de/api/v2/exerciseimage/?format=json&status=2&limit=999")).done(function(data1, data2) {
                 if ("undefined" === typeof json.results[0]) {
                     $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
                 } else {
@@ -37,7 +37,7 @@ $(document).ready(function() {
     {
         let names = [];
 
-        $.getJSON("https://wger.de/api/v2/exercise/?format=json&language=2&limit=999", function(data) {
+        $.getJSON("https://wger.de/api/v2/exercise/?format=json&language=2&limit=999&status=2", function(data) {
             $.each(data.results, function (index, item) {
                 names.push(item.name);
             });
