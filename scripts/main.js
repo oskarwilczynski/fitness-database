@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
     let getExercise = function() {
+        let descriptionData, imageData, exerciseId;
         let exercise = $("#term").val();
 
         if (exercise == "") {
@@ -9,12 +10,21 @@ $(document).ready(function() {
         } else {
             $("#exercise_status").html("<h2 class='loading'>Loading...</h2>")
 
-            $.when($.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2&status=2"), $.getJSON("https://wger.de/api/v2/exerciseimage/?format=json&status=2&limit=999")).done(function(data1, data2) {
-                if ("undefined" === typeof json.results[0]) {
+            $.when(
+                $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2&status=2", function(data) {
+                    descriptionData = data;
+                    exerciseId = descriptionData.results[0].id;
+                }), 
+                $.getJSON("https://wger.de/api/v2/exerciseimage/?format=json&status=2&exercise=" + exerciseId + "&limit=999", function(data) {
+                    imageData = data;
+                })
+            ).done(function() {
+                if ("undefined" === typeof descriptionData.results[0]) {
                     $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
                 } else {
                     $('#exercise_status').html('<h2 class="loading">Exercise found!</h2>');
-                    $('#exercise_description').html(json.results[0].description);
+                    $('#exercise_img').attr("src", imageData.results[0].image);
+                    $('#exercise_description').html(descriptionData.results[0].description);
                 }
             })
         }
