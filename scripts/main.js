@@ -1,6 +1,5 @@
 "use strict";
 $(document).ready(function() {
-
     let getExercise = function() {
         let descriptionData, imageData, exerciseId;
         let exercise = $("#term").val();
@@ -11,21 +10,20 @@ $(document).ready(function() {
             $("#exercise_status").html("<h2 class='loading'>Loading...</h2>")
 
             $.when(
-                $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2&status=2", function(data) {
-                    descriptionData = data;
-                    exerciseId = descriptionData.results[0].id;
-                }), 
-                $.getJSON("https://wger.de/api/v2/exerciseimage/?format=json&status=2&exercise=" + exerciseId + "&limit=999", function(data) {
-                    imageData = data;
+                $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2&status=2", function(data1) {
+                    descriptionData = data1;
+                    exerciseId = data1.results[0].id;
                 })
             ).done(function() {
-                if ("undefined" === typeof descriptionData.results[0]) {
-                    $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
-                } else {
-                    $('#exercise_status').html('<h2 class="loading">Exercise found!</h2>');
-                    $('#exercise_img').attr("src", imageData.results[0].image);
-                    $('#exercise_description').html(descriptionData.results[0].description);
-                }
+                $.getJSON("https://wger.de/api/v2/exerciseimage/?format=json&status=2&exercise=" + exerciseId + "&limit=999", function(data2) {
+                    if ("undefined" === typeof descriptionData.results[0]) {
+                        $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
+                    } else {
+                        $('#exercise_status').html('<h2 class="loading">Exercise found!</h2>');
+                        $('#exercise_img').attr("src", data2.results[0].image);
+                        $('#exercise_description').html(descriptionData.results[0].description);
+                    }
+                })
             })
         }
     };
