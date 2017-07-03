@@ -8,22 +8,23 @@ $(document).ready(function() {
             $("#exercise_status").html("<h2 class='loading'>Please enter something.</h2>");
         } else {
             $("#exercise_status").html("<h2 class='loading'>Loading...</h2>")
-
-            $.when(
-                $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2&status=2", function(data1) {
-                    descriptionData = data1;
-                    exerciseId = data1.results[0].id;
-                })
-            ).done(function() {
-                $.getJSON("https://wger.de/api/v2/exerciseimage/?format=json&status=2&exercise=" + exerciseId + "&limit=999", function(data2) {
-                    if ("undefined" === typeof descriptionData.results[0]) {
-                        $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
-                    } else {
+            
+            $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2&status=2", function(data1) {
+                if ("undefined" === typeof data1.results[0]) {
+                    $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
+                } else {
+                    $.getJSON("https://wger.de/api/v2/exerciseimage/?format=json&status=2&exercise=" + data1.results[0].id + "&limit=999", function(data2) {
                         $('#exercise_status').html('<h2 class="loading">Exercise found!</h2>');
-                        $('#exercise_img').attr("src", data2.results[0].image);
-                        $('#exercise_description').html(descriptionData.results[0].description);
-                    }
-                })
+                        $('#exercise_description').html(data1.results[0].description);
+
+                        if ("undefined" === typeof data2.results[0]) {
+                            $('#exercise_img').attr("src", "");
+                            $('#exercise_status').html('<h2 class="loading">No img found!</h2>');
+                        } else {
+                            $('#exercise_img').attr("src", data2.results[0].image);
+                        }
+                    })
+                }
             })
         }
     };
