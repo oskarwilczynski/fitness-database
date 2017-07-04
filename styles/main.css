@@ -113,16 +113,19 @@ h1 {
 #exercise {
     width: 100%;
     max-height: 50%;
+    text-align: center;
 }
 
 #exercise_description {
     text-align: center;
+    display: inline-block;
+    padding: 5px;
 }
 
 #exercise_img {
     display: block;
-    max-width: 60%;
-    max-height: 60%;
+    max-width: 75%;
+    max-height: 75%;
     margin: 0 auto;
 }
 
