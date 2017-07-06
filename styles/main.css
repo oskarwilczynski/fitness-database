@@ -27,6 +27,85 @@ h1 {
     margin-bottom: 10px;
 }
 
+#bulgaria_flag {
+    background-image: url(../images/Bulgaria.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#czech_flag {
+    background-image: url(../images/CzechRepublic.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#germany_flag {
+    background-image: url(../images/Germany.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#greece_flag {
+    background-image: url(../images/Greece.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#netherlands_flag {
+    background-image: url(../images/Netherlands.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#norway_flag {
+    background-image: url(../images/Norway.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#portugal_flag {
+    background-image: url(../images/Portugal.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#russia_flag {
+    background-image: url(../images/RussianFederation.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#spain_flag {
+    background-image: url(../images/Spain.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#sweden_flag {
+    background-image: url(../images/Sweden.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+#uk_flag {
+    background-image: url(../images/UnitedKingdom.png);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+
+
+
 .container {
     height: 100%;
     padding: 0;
