@@ -1,5 +1,7 @@
 "use strict";
 $(document).ready(function() {
+    let languageId = 2;
+
     let getExercise = function() {
         let exercise = $("#term").val();
 
@@ -8,7 +10,7 @@ $(document).ready(function() {
         } else {
             $("#exercise_status").html("<h2 class='loading'>Loading...</h2>")
             
-            $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=2&status=2", function(descriptionData) {
+            $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=" + languageId + "&status=2", function(descriptionData) {
                 if ("undefined" === typeof descriptionData.results[0]) {
                     $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
                     $('#exercise_img').attr("src", "");
@@ -32,6 +34,22 @@ $(document).ready(function() {
         }
     };
 
+    let getNamesList = function(id) {
+        let names = [];
+
+        $.getJSON("https://wger.de/api/v2/exercise/?format=json&language=" + id + "&limit=999&status=2", function(data) {
+            $.each(data.results, function (index, item) {
+                names.push(item.name);
+            });
+
+            console.log(names);
+        });
+
+        $("#term").autocomplete({source: names});
+    }
+
+    getNamesList(languageId);
+
     (function autocompletePatch() {
         $.ui.autocomplete.prototype._renderItem = function(ul, item) {
             let cleanTerm = this.term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -46,19 +64,11 @@ $(document).ready(function() {
         };
     })();
 
-    {
-        let names = [];
-
-        $.getJSON("https://wger.de/api/v2/exercise/?format=json&language=2&limit=999&status=2", function(data) {
-            $.each(data.results, function (index, item) {
-                names.push(item.name);
-            });
-        });
-
-        $("#term").autocomplete({source: names});
-    }
-
     $("#search").click(getExercise);
+    $(".flag").click(function() {
+        languageId = this.id.slice(-1);
+        getNamesList(languageId);
+    })
 
     $("#term").keyup(function(event) {
         if (event.keycode == 13) {

@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Fitness Database</title>
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Lobster" rel="stylesheet"> 
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
-        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js">
-        </script>
-        <script type="text/javascript" src="scripts/main.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <h1>Fitness Database</h1>
-                <div>
-                	<span id="bulgaria_flag"></span>
-                	<span id="czech_flag"></span>
-                	<span id="germany_flag"></span>
-                	<span id="greece_flag"></span>
-                	<span id="netherlands_flag"></span>
-                	<span id="norway_flag"></span>
-                	<span id="portugal_flag"></span>
-                	<span id="russia_flag"></span>
-                	<span id="spain_flag"></span>
-                	<span id="sweden_flag"></span>
-                	<span id="uk_flag"></span>
-                </div>
-            </header>
-            <section id="fetch">
-                <input type="text" placeholder="Enter an exercise name" id="term" class="flex-item">
-                <button id="search" class="flex-item">Find me an exercise</button>
-            </section>
-            <section id="exercise">
-                <p id="exercise_status"></p>
-                <img id="exercise_img">
-                <section id="exercise_description"></section>
-            </section>
-        </div>
-    </body>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Fitness Database</title>
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Lobster" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js">
+		</script>
+		<script type="text/javascript" src="scripts/main.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div id="flag_row">
+					<span id="uk_flag_2" class="flag"></span>
+					<span id="czech_flag_9" class="flag"></span>
+					<span id="germany_flag_1" class="flag"></span>
+					<span id="norway_flag_11" class="flag"></span>
+				</div>
+				<h1>Fitness Database</h1>
+			</header>
+			<section id="fetch">
+				<input type="text" placeholder="Enter an exercise name" id="term" class="flex-item">
+				<button id="search" class="flex-item">Find me an exercise</button>
+			</section>
+			<section id="exercise">
+				<p id="exercise_status"></p>
+				<img id="exercise_img">
+				<section id="exercise_description"></section>
+			</section>
+		</div>
+	</body>
 </html>
