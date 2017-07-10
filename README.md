@@ -15,9 +15,9 @@ Just download whole directory, run index.html and enjoy!
 
 ## Release History
 * 1.2
-	* Image display added
-	* Czech, German and Norwegian descriptions to search for added
-	* Language selector added
+    * Image display added
+    * Czech, German and Norwegian descriptions to search for added
+    * Language selector added
 
 * 1.1
     * Responsive Web Design added
