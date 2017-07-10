@@ -12,22 +12,22 @@ $(document).ready(function() {
             
             $.getJSON("https://wger.de/api/v2/exercise/?name=" + exercise + "&format=json&language=" + languageId + "&status=2", function(descriptionData) {
                 if ("undefined" === typeof descriptionData.results[0]) {
-                    $('#exercise_status').html('<h2 class="loading">No exercise found!</h2>');
-                    $('#exercise_img').attr("src", "");
-                    $('#exercise_description').empty();
-                    $('#exercise_description').css({"border": "", "border-radius": ""});
+                    $("#exercise_status").html("<h2 class='loading'>No exercise found!</h2>");
+                    $("#exercise_img").attr("src", "");
+                    $("#exercise_description").empty();
+                    $("#exercise_description").css({"border": "", "border-radius": ""});
 
                 } else {
                     $.getJSON("https://wger.de/api/v2/exerciseimage/?format=json&status=2&exercise=" + descriptionData.results[0].id + "&limit=999", function(imageData) {
                         if ("undefined" === typeof imageData.results[0]) {
-                            $('#exercise_img').attr("src", "images/no-img-available.png");
+                            $("#exercise_img").attr("src", "images/no-img-available.png");
                         } else {
-                            $('#exercise_img').attr("src", imageData.results[0].image);
+                            $("#exercise_img").attr("src", imageData.results[0].image);
                         }
 
-                        $('#exercise_status').html('<h2 class="loading">Exercise found!</h2>');
-                        $('#exercise_description').html(descriptionData.results[0].description);
-                        $('#exercise_description').css({"border": "2px solid #f8f8f8", "border-radius": "10px"});
+                        $("#exercise_status").html("<h2 class='loading'>Exercise found!</h2>");
+                        $("#exercise_description").html(descriptionData.results[0].description);
+                        $("#exercise_description").css({"border": "2px solid #f8f8f8", "border-radius": "10px"});
                     })
                 }
             })
@@ -67,6 +67,8 @@ $(document).ready(function() {
     $("#search").click(getExercise);
     $(".flag").click(function() {
         languageId = this.id.slice(-1);
+        $(".flag").removeClass("flag-on");
+        $(this).addClass("flag-on");
         getNamesList(languageId);
     })
 

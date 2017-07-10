@@ -29,7 +29,6 @@ h1 {
 
 #uk_flag_2 {
     background-image: url(../images/UnitedKingdom.png);
-
 }
 
 #czech_flag_9 {
@@ -58,7 +57,7 @@ h1 {
     display: inline-block;
 }
 
-.flag:hover {
+.flag:hover, .flag-on {
     opacity: 1;
 }
 
@@ -98,7 +97,7 @@ h1 {
     display: block;
     margin: 10px auto;
     width: 55%;
-    font-family: 'Arvo', serif;
+    font-family: "Arvo", serif;
 }
 
 #search:hover {
@@ -137,11 +136,11 @@ h1 {
     font-size: 1.6em;
     margin: 10px auto;
     width: 55%;
-    font-family: 'Arvo', serif;
+    font-family: "Arvo", serif;
 }
 
 .loading {
-    font-family: 'Arvo', serif;
+    font-family: "Arvo", serif;
     text-align: center;
 }
 
