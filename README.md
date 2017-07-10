@@ -1,4 +1,4 @@
-![Screenshot](https://snag.gy/4kHIrN.jpg)
+![Screenshot](https://snag.gy/YOW5qT.jpg)
 
 # Fitness Database
 Simple search engine to look for exercise's description in external, open-source API.
