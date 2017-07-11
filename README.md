@@ -11,7 +11,7 @@ Simple search engine to look for exercise's description in external, open-source
 
 ## Installation
 
-Just download whole directory, run index.html and enjoy!
+Just download whole directory, run index.html in your browser and enjoy!
 
 ## Release History
 * 1.2
