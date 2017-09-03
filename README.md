@@ -29,4 +29,5 @@ Just download whole directory, run index.html in your browser and enjoy!
 
 Oskar Wilczynski – oskar.andrzej.wilczynski@gmail.com
 
+[oskarwilczynski.com](http://oskarwilczynski.com/)<br/>
 [GitHub](https://github.com/oskarwilczynski)
