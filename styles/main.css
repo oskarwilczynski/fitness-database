@@ -50,8 +50,6 @@ h1 {
 .flag {
     opacity: 0.5;
     transition: opacity .25s ease-in-out;
-    -moz-transition: opacity .25s ease-in-out;
-    -webkit-transition: opacity .25s ease-in-out;
     width: 32px;
     height: 32px;
     display: inline-block;
@@ -66,7 +64,6 @@ h1 {
     padding: 0;
     margin: 0;
     display: -webkit-box;
-    display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -78,15 +75,7 @@ h1 {
 #search {
     background: #e3e3e3;
     border: 1px solid #bbb;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
     border-radius: 3px;
-    -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
-    -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
-    -ms-box-shadow: inset 0 0 1px 1px #f6f6f6;
-    -o-box-shadow: inset 0 0 1px 1px #f6f6f6;
     box-shadow: inset 0 0 1px 1px #f6f6f6;
     color: #333;
     line-height: 1;
@@ -102,10 +91,6 @@ h1 {
 
 #search:hover {
     background: #d9d9d9;
-    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
-    -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
-    -ms-box-shadow: inset 0 0 1px 1px #eaeaea;
-    -o-box-shadow: inset 0 0 1px 1px #eaeaea;
     box-shadow: inset 0 0 1px 1px #eaeaea;
     color: #222;
     cursor: pointer; 
@@ -113,10 +98,6 @@ h1 {
 
 #search:active {
     background: #d0d0d0;
-    -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
-    -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
-    -ms-box-shadow: inset 0 0 1px 1px #e3e3e3;
-    -o-box-shadow: inset 0 0 1px 1px #e3e3e3;
     box-shadow: inset 0 0 1px 1px #e3e3e3;
     color: #000;
 }
