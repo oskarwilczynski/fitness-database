@@ -29,4 +29,5 @@ Lie at http://oskarwilczynski.com/projects/fitness-database/index.html
 
 Oskar Wilczynski – oskar.andrzej.wilczynski@gmail.com
 
+[oskarwilczynski.com](http://oskarwilczynski.com/)<br/>
 [GitHub](https://github.com/oskarwilczynski)
