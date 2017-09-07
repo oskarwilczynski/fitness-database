@@ -11,7 +11,7 @@ Simple search engine to look for exercise's description in external, open-source
 
 ## Installation
 
-Just download whole directory, run index.html in your browser and enjoy!
+Lie at http://oskarwilczynski.com/projects/fitness-database/index.html
 
 ## Release History
 * 1.2
