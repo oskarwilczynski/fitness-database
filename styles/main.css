@@ -72,7 +72,7 @@ h1 {
     flex-direction: column;
 }
 
-#search {
+#search-btn {
     background: #e3e3e3;
     border: 1px solid #bbb;
     border-radius: 3px;
@@ -89,14 +89,14 @@ h1 {
     font-family: "Arvo", serif;
 }
 
-#search:hover {
+#search-btn:hover {
     background: #d9d9d9;
     box-shadow: inset 0 0 1px 1px #eaeaea;
     color: #222;
     cursor: pointer; 
 }
 
-#search:active {
+#search-btn:active {
     background: #d0d0d0;
     box-shadow: inset 0 0 1px 1px #e3e3e3;
     color: #000;
@@ -145,7 +145,7 @@ h1 {
 }
 
 @media only screen and (max-width: 590px) {
-    #search, #term {
+    #search-btn, #term {
         font-size: 1em;
         width: 100%;
     }
