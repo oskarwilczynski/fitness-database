@@ -22,164 +22,164 @@ $url-flag-Norway: url(../images/Norway.png);
 
 //RESETS
 * {
-	margin: 0;
-	padding: 0;
-	&:not(input) {
-		user-select: none;
-	}
-	&:focus:not(input) {
-		user-select: none;
-	}
+    margin: 0;
+    padding: 0;
+    &:not(input) {
+        user-select: none;
+    }
+    &:focus:not(input) {
+        user-select: none;
+    }
 }
 
 html {
-	height: 100%;
+    height: 100%;
 }
 
 body {
-	height: 100%;
-	margin: 0;
-	background-color: $color-tiber;
-	color: $color-alabaster;
+    height: 100%;
+    margin: 0;
+    background-color: $color-tiber;
+    color: $color-alabaster;
 }
 
 h1 {
-	font-family: $font-stack-LOBSTER;
-	font-size: 5em;
-	margin-bottom: 10px;
+    font-family: $font-stack-LOBSTER;
+    font-size: 5em;
+    margin-bottom: 10px;
 }
 
 #uk_flag_2 {
-	background-image: $url-flag-UK;
+    background-image: $url-flag-UK;
 }
 
 #czech_flag_9 {
-	background-image: $url-flag-Czech;
+    background-image: $url-flag-Czech;
 }
 
 #germany_flag_1 {
-	background-image: $url-flag-Germany;
+    background-image: $url-flag-Germany;
 }
 
 #norway_flag_11 {
-	background-image: $url-flag-Norway;
+    background-image: $url-flag-Norway;
 }
 
 #flag_row {
-	text-align: center;
+    text-align: center;
 }
 
 .flag {
-	opacity: 0.5;
-	transition: opacity .25s ease-in-out;
-	width: 32px;
-	height: 32px;
-	display: inline-block;
-	&:hover {
-		opacity: 1;
-	}
+    opacity: 0.5;
+    transition: opacity .25s ease-in-out;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .flag-on {
-	opacity: 1;
+    opacity: 1;
 }
 
 .container {
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #search-btn {
-	background: $color-mercury;
-	border: 1px solid $color-silver;
-	border-radius: 3px;
-	box-shadow: inset 0 0 1px 1px $color-wildSand;
-	color: $color-mineShaft;
-	line-height: 1;
-	font-size: 1.6em;
-	padding: 5px 0 9px;
-	text-align: center;
-	text-shadow: 0 1px 0 white;
-	display: block;
-	margin: 10px auto;
-	width: 55%;
-	font-family: $font-stack-Arvo;
-	&:hover {
-		background: $color-alto;
-		box-shadow: inset 0 0 1px 1px $color-gallery;
-		color: $color-logCabin;
-		cursor: pointer;
-	}
-	&:active {
-		background: $color-celeste;
-		box-shadow: inset 0 0 1px 1px $color-mercury;
-		color: black;
-	}
+    background: $color-mercury;
+    border: 1px solid $color-silver;
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px 1px $color-wildSand;
+    color: $color-mineShaft;
+    line-height: 1;
+    font-size: 1.6em;
+    padding: 5px 0 9px;
+    text-align: center;
+    text-shadow: 0 1px 0 white;
+    display: block;
+    margin: 10px auto;
+    width: 55%;
+    font-family: $font-stack-Arvo;
+    &:hover {
+        background: $color-alto;
+        box-shadow: inset 0 0 1px 1px $color-gallery;
+        color: $color-logCabin;
+        cursor: pointer;
+    }
+    &:active {
+        background: $color-celeste;
+        box-shadow: inset 0 0 1px 1px $color-mercury;
+        color: black;
+    }
 }
 
 #fetch {
-	width: 50%;
+    width: 50%;
 }
 
 .flex-item {
-	text-align: center;
-	display: block;
+    text-align: center;
+    display: block;
 }
 
 #term {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 1.6em;
-	margin: 10px auto;
-	width: 55%;
-	font-family: $font-stack-Arvo;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.6em;
+    margin: 10px auto;
+    width: 55%;
+    font-family: $font-stack-Arvo;
 }
 
 .loading {
-	font-family: $font-stack-Arvo;
-	text-align: center;
+    font-family: $font-stack-Arvo;
+    text-align: center;
 }
 
 #exercise {
-	width: 100%;
-	max-height: 50%;
-	text-align: center;
+    width: 100%;
+    max-height: 50%;
+    text-align: center;
 }
 
 #exercise_description {
-	text-align: center;
-	display: inline-block;
-	padding: 5px;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
 }
 
 #exercise_img {
-	display: block;
-	max-width: 75%;
-	max-height: 75%;
-	margin: 0 auto;
+    display: block;
+    max-width: 75%;
+    max-height: 75%;
+    margin: 0 auto;
 }
 
 @media only screen and (max-width: 590px) {
-	#search-btn {
-		font-size: 1em;
-		width: 100%;
-	}
-	#term {
-		font-size: 1em;
-		width: 100%;
-	}
-	h1 {
-		font-size: 3em;
-	}
+    #search-btn {
+        font-size: 1em;
+        width: 100%;
+    }
+    #term {
+        font-size: 1em;
+        width: 100%;
+    }
+    h1 {
+        font-size: 3em;
+    }
 }
 
 @media only screen and (max-width: 340px) {
-	h1 {
-		font-size: 2.6em;
-	}
+    h1 {
+        font-size: 2.6em;
+    }
 }
