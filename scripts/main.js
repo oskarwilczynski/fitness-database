@@ -70,7 +70,7 @@ $(document).ready(function() {
         };
     })();
 
-    $("#search").click(getExercise);
+    $("#search-btn").click(getExercise);
     $(".flag").click(function() {
         languageId = this.id.slice(-1);
         $(".flag").removeClass("flag-on");
